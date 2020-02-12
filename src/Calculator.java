@@ -13,8 +13,11 @@ public class Calculator {
 	 */
 	public double action(double a, double b) {
 		double result = 0;
+		if (b==0){
+			throw new ArithmeticException("b cannot be zero");
+		}
 		if (a<b) {
-			result = a * b;
+			result = a*b;
 		}else {
 			result = a/b;
 		}
