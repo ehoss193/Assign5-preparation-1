@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class RangeTest3 {
+public class OtherRangeTest {
 	private Range exampleRange;
 	private Range exampleRange2;
 	private Range result;
