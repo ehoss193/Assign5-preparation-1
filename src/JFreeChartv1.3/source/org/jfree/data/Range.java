@@ -100,7 +100,7 @@ public class Range implements Serializable {
 			return true;
 		}
 
-		return (upper < this.upper && upper >= lower);
+		return (upper < this.upper && upper > this.lower);
 	}
 
 	public double constrain(double value) {
@@ -164,7 +164,7 @@ public class Range implements Serializable {
 		if (base == null) {
 			throw new IllegalArgumentException("Null 'range' argument.");
 		}
-		if (allowZeroCrossing) {
+		if (allowZeroCrossing == true) {
 			return new Range(base.getLowerBound() + delta, base.getUpperBound() + delta);
 		}
 
@@ -173,8 +173,8 @@ public class Range implements Serializable {
 	}
 
 	private static double shiftWithNoZeroCrossing(double value, double delta) {
-		if (value > 0.0D) {
-			return Math.max(value + delta, 0.0D);
+		if (value > 0.0) {
+			return Math.max(value + delta, 0.0);
 		}
 
 		return value + delta;
