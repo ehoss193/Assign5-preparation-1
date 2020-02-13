@@ -1,4 +1,4 @@
-name: RangeTest
+name: RT
 
 on: [push]
 
@@ -11,9 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Running tests
       run: |
-        echo Starting the tests:
-        echo Starting the tests:
-        echo Starting the tests:
         echo Starting the tests:
         mkdir bin
         mkdir lib
