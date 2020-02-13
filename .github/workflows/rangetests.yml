@@ -12,6 +12,9 @@ jobs:
     - name: Running tests
       run: |
         echo Starting the tests:
+        echo Starting the tests:
+        echo Starting the tests:
+        echo Starting the tests:
         mkdir bin
         mkdir lib
         javac -cp lib/jcommon-1.0.17.jar:lib/javax.servlet-api-3.0.1.jar:lib/xml-apis-1.4.01.jar:src/ -d bin/ $(find src/ -name "*.java")
