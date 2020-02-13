@@ -1,7 +1,5 @@
 package org.jfree.data;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,10 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SuiteDisplayName;
-import org.junit.runner.RunWith;
-
-@RunWith(JUnitPlatform.class)
-@SuiteDisplayName("JUnit 5 - Testing Range Methods")
 
 public class RangeTest3 {
 	private Range exampleRange;
