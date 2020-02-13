@@ -161,6 +161,9 @@ public class Range implements Serializable {
 	}
 
 	public static Range shift(Range base, double delta, boolean allowZeroCrossing) {
+		if (range == null) {
+			throw new IllegalArgumentException("Null 'range' argument.");
+		}
 		if (allowZeroCrossing) {
 			return new Range(base.getLowerBound() + delta, base.getUpperBound() + delta);
 		}
