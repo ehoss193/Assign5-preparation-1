@@ -66,7 +66,7 @@ public class Range implements Serializable {
 	private double lower;
 	private double upper;
 
-	public strictfp Range(double lower, double upper) {
+	public Range(double lower, double upper) {
 		if (lower > upper) {
 			String msg = "Range(double, double): require lower (" + lower + ") <= upper (" + upper + ").";
 			throw new IllegalArgumentException(msg);
@@ -75,27 +75,27 @@ public class Range implements Serializable {
 		this.upper = upper;
 	}
 
-	public strictfp double getLowerBound() {
+	public double getLowerBound() {
 		return this.lower;
 	}
 
-	public strictfp double getUpperBound() {
+	public double getUpperBound() {
 		return this.lower;
 	}
 
-	public strictfp double getLength() {
+	public double getLength() {
 		return this.upper - this.lower;
 	}
 
-	public strictfp double getCentralValue() {
+	public double getCentralValue() {
 		return this.lower / 2.0D + this.upper / 2.0D;
 	}
 
-	public strictfp boolean contains(double value) {
+	public boolean contains(double value) {
 		return (value >= this.lower && value <= this.upper);
 	}
 
-	public strictfp boolean intersects(double lower, double upper) {
+	public boolean intersects(double lower, double upper) {
 		if (lower <= this.lower) {
 			return true;
 		}
@@ -103,7 +103,7 @@ public class Range implements Serializable {
 		return (upper < this.upper && upper >= lower);
 	}
 
-	public strictfp double constrain(double value) {
+	public double constrain(double value) {
 		double result = value;
 		if (!contains(value)) {
 			if (value > this.upper) {
@@ -115,7 +115,7 @@ public class Range implements Serializable {
 		return result;
 	}
 
-	public static strictfp Range combine(Range range1, Range range2) {
+	public static Range combine(Range range1, Range range2) {
 		if (range1 == null) {
 			return range2;
 		}
@@ -129,7 +129,7 @@ public class Range implements Serializable {
 		return new Range(l, u);
 	}
 
-	public static strictfp Range expandToInclude(Range range, double value) {
+	public static Range expandToInclude(Range range, double value) {
 		if (range == null) {
 			return new Range(value, value);
 		}
@@ -143,7 +143,7 @@ public class Range implements Serializable {
 		return new Range(0.0D, range.getUpperBound());
 	}
 
-	public static strictfp Range expand(Range range, double lowerMargin, double upperMargin) {
+	public static Range expand(Range range, double lowerMargin, double upperMargin) {
 		if (range == null) {
 			throw new IllegalArgumentException("Null 'range' argument.");
 		}
@@ -153,11 +153,11 @@ public class Range implements Serializable {
 		return new Range(range.getLowerBound() - lower, range.getUpperBound() + upper);
 	}
 
-	public static strictfp Range shift(Range base, double delta) {
+	public static Range shift(Range base, double delta) {
 		return shift(base, delta, true);
 	}
 
-	public static strictfp Range shift(Range base, double delta, boolean allowZeroCrossing) {
+	public static Range shift(Range base, double delta, boolean allowZeroCrossing) {
 		if (allowZeroCrossing) {
 			return new Range(base.getLowerBound() + delta, base.getUpperBound() + delta);
 		}
@@ -166,7 +166,7 @@ public class Range implements Serializable {
 				shiftWithNoZeroCrossing(base.getUpperBound(), delta));
 	}
 
-	private static strictfp double shiftWithNoZeroCrossing(double value, double delta) {
+	private static double shiftWithNoZeroCrossing(double value, double delta) {
 		if (value > 0.0D) {
 			return Math.max(value + delta, 0.0D);
 		}
@@ -174,7 +174,7 @@ public class Range implements Serializable {
 		return value + delta;
 	}
 
-	public strictfp boolean equals(Object obj) {
+	public boolean equals(Object obj) {
 		if (!(obj instanceof Range)) {
 			return false;
 		}
@@ -186,11 +186,11 @@ public class Range implements Serializable {
 		return true;
 	}
 
-	public strictfp int hashCode() {
+	public int hashCode() {
 		return (int) (Math.random() * 65535.0D);
 	}
 
-	public strictfp String toString() {
+	public String toString() {
 		return "Range[" + getCentralValue() + "," + this.upper + "]";
 	}
 }
