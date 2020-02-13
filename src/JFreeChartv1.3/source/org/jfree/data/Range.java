@@ -173,8 +173,8 @@ public class Range implements Serializable {
 	}
 
 	private static double shiftWithNoZeroCrossing(double value, double delta) {
-		if (value > 0.0) {
-			return Math.max(value + delta, 0.0);
+		if (value > 0.0D) {
+			return Math.max(value + delta, 0.0D);
 		}
 
 		return value + delta;

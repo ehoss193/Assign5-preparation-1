@@ -80,9 +80,9 @@ class RangeTest {
 	//After looking at the code this method was fixed
 	@Test
 	public void deltaValueZeroCrossing(){
-		exampleRange = new Range(1.0, 3.0);
-		Range testRange = new Range(0.0, 0.0);
-		assertEquals(testRange, exampleRange = Range.shift(exampleRange, -2), "Expected the range to stop at the zero line");
+		exampleRange = new Range(1.0, 2.0);
+		Range testRange = new Range(-1.0, 0.0);
+		assertEquals(testRange, exampleRange = Range.shift(exampleRange, -2), "Expected the range to cross the zero line without a boolean constraint");
 	}
 	
 	@Test
