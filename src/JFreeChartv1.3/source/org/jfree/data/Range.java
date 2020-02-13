@@ -154,14 +154,14 @@ public class Range implements Serializable {
 	}
 
 	public static Range shift(Range base, double delta) {
-		if (range == null) {
+		if (base == null) {
 			throw new IllegalArgumentException("Null 'base' argument.");
 		}
 		return shift(base, delta, true);
 	}
 
 	public static Range shift(Range base, double delta, boolean allowZeroCrossing) {
-		if (range == null) {
+		if (base == null) {
 			throw new IllegalArgumentException("Null 'range' argument.");
 		}
 		if (allowZeroCrossing) {
