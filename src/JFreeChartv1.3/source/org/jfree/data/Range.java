@@ -210,6 +210,6 @@ public class Range implements Serializable {
 	}
 
 	public String toString() {
-		return "Range[" + getCentralValue() + "," + this.upper + "]";
+		return "Range[" + this.lower + "," + this.upper + "]";
 	}
 }
