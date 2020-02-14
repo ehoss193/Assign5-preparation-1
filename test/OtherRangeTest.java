@@ -175,14 +175,14 @@ public class OtherRangeTest {
 	void expandPositive() {
 		exampleRange = new Range (1,8);
 		exampleRange2 = new Range (2,6);
-		assertSame(exampleRange, Range.expand(exampleRange2, 0.25, 0.5));
+		assertEquals(exampleRange, Range.expand(exampleRange2, 0.25, 0.5));
 	}
 	
 	@Test
 	void expandNegative() {
 		exampleRange = new Range (-8, -1);
 		exampleRange2 = new Range (-6, -2);
-		assertSame(exampleRange, Range.expand(exampleRange2, 0.5, 0.25));
+		assertEquals(exampleRange, Range.expand(exampleRange2, 0.5, 0.25));
 	}
 	
 	@Test
