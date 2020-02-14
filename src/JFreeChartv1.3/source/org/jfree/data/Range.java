@@ -137,8 +137,8 @@ public class Range implements Serializable {
 			return range1;
 		}
 
-		double l = Math.min(range2.getLowerBound(), range2.getLowerBound());
-		double u = Math.max(range1.getUpperBound(), range1.getUpperBound());
+		double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
+		double u = Math.max(range1.getUpperBound(), range2.getUpperBound());
 		return new Range(l, u);
 	}
 
