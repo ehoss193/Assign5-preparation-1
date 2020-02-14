@@ -80,7 +80,7 @@ public class Range implements Serializable {
 	}
 
 	public double getUpperBound() {
-		return this.lower;
+		return this.upper;
 	}
 
 	public double getLength() {
@@ -186,7 +186,7 @@ public class Range implements Serializable {
 	}
 
 	private static double shiftWithNoZeroCrossing(double value, double delta) {
-		if (value > 0.0D) {
+		if (value > 0.00) {
 			return Math.max(value + delta, 0.0D);
 		}
 
