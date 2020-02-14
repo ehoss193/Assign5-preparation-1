@@ -54,7 +54,7 @@ class RangeTest {
 	@Test
 	public void upperBoundLessThanLowerBound(){
 		exampleRange = new Range(-1.0, 1.0);
-		assertEquals(false, exampleRange.intersects(1.0, -1.0), "Expected lower bound to be higher than the upper bound");
+		assertEquals(false, exampleRange.intersects(1.0, -1.0), "Expected a fail because lower bound is higher than the upper bound");
 	}
 	
 	@Test

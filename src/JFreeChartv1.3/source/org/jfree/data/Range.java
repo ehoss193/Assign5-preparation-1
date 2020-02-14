@@ -96,6 +96,10 @@ public class Range implements Serializable {
 	}
 
 	public boolean intersects(double lower, double upper) {
+		if(lower > upper)
+		{
+			return false;
+		}
 		if (lower >= this.lower && lower <= this.upper) {
 			return true;
 		}
