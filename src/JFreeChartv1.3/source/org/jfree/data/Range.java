@@ -96,11 +96,13 @@ public class Range implements Serializable {
 	}
 
 	public boolean intersects(double lower, double upper) {
-		if(lower > upper)
-		{
+		if(lower > upper) {
 			return false;
 		}
-		if (lower > this.lower && lower < this.upper) {
+		if(lower == this.lower && upper == this.upper) {
+			return true;
+		}
+		else if (lower > this.lower && lower < this.upper) {
 			return true;
 		}
 		else if (this.lower > lower && this.lower < upper) {
@@ -109,7 +111,9 @@ public class Range implements Serializable {
 		else if (this.upper < upper && this.upper > lower) {
 			return true;
 		}
-		return (upper < this.upper && upper > this.lower);
+		else {
+			return (upper < this.upper && upper > this.lower);
+		}
 	}
 
 	public double constrain(double value) {
