@@ -100,10 +100,10 @@ public class Range implements Serializable {
 		{
 			return false;
 		}
-		if (lower >= this.lower && lower <= this.upper) {
+		if (lower > this.lower && lower < this.upper) {
 			return true;
 		}
-		else if (this.lower >= lower && this.lower <= upper) {
+		else if (this.lower > lower && this.lower < upper) {
 			return true;
 		}
 		else if (this.upper < upper && this.upper > lower) {
