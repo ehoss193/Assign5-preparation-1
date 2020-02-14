@@ -99,7 +99,12 @@ public class Range implements Serializable {
 		if (lower >= this.lower && lower <= this.upper) {
 			return true;
 		}
-
+		else if (this.lower >= lower && this.lower <= upper) {
+			return true;
+		}
+		else if (this.upper < upper && this.upper > lower) {
+			return true;
+		}
 		return (upper < this.upper && upper > this.lower);
 	}
 
